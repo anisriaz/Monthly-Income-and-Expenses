@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Expenses Tracker App</title>
+</head>
+
+<body>
+
+    <div id="top">
+        <form class="input-card">
+            <h3>Add Income</h3>
+            <label for="id">Add ID</label>
+            <input type="text" id="id" placeholder="Add Id" />
+            <label for="income">Add Amount Income</label>
+            <input type="text" id="income" placeholder="Add Income" />
+            <label for="desc">Add Description</label>
+            <input type="text" id="incomeDesc" placeholder="Add Description" />
+            <label for="date">Add Date</label>
+            <input type="date" id="date" />
+            <button id="button" onclick="addIncomes()">Add</button>
+        </form>
+    </div>
+
+    <div id="top">
+        <form class="update-card">
+            <h3>Update Income</h3>
+            <label for="editId">ID</label>
+            <input type="text" hidden id="editId" placeholder="ID" />
+            <label for="editIncome">Amount</label>
+            <input type="text" id="editIncome" placeholder="Add Income" />
+            <label for="editDesc">Description</label>
+            <input type="text" id="editDesc" placeholder="Add Description" />
+            <label for="editDate">Date</label>
+            <input type="date" id="editDate" />
+            <button type="button" id="button" onclick="updateIncomes()">Update</button>
+        </form>
+    </div>
+
+
+    <div>
+        <input type="text" id="search" placeholder="Search..." onkeyup="searchFunc()" />
+    </div>
+
+    <div id="popup" style="display: none;">
+        <input type="hidden" id="currentExpenseId" />
+        <h3>Deduct Amount</h3>
+        <input type="number" id="amountSpend" placeholder="Amount to Deduct" />
+        <h3>Add Category</h3>
+        <input type="text" id="catgory" placeholder="Amount Expense" />
+        <h3>Add Date</h3>
+        <input type="date" id="addDate" />
+        <button onclick="submitPopup()">Submit</button>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="allIcomesContainer"></div>
+    <div id="allExpensesContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
